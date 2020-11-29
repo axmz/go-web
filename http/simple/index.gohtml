@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>HTML Forms</h2>
+
+<form action="/">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+{{ if .}}
+    <div>
+        <h1>Method: {{.Method}}</h1>
+    </div>
+    <div>
+        <h1>Proto: {{.Proto}}</h1>
+    </div>
+    <div>
+        <h1>Url:</h1> 
+        {{if .URL}}
+        {{.URL.Path}}
+            {{/* {{range $key, $val := .URL}}
+            <ul>
+                <li>{{$key}} - {{$val}}</li>
+            </ul>
+            {{end}} */}}
+        {{end}}
+    </div>
+    <div>
+        <h1>Headers:</h1> 
+        {{if .Header}}
+            {{range $k, $v := .Header}}
+            <ul>
+                <li>{{$k}} - {{$v}}</li>
+            </ul>
+            {{end}}
+        {{end}}
+    </div>
+
+{{end}}
+</body>
+</html>

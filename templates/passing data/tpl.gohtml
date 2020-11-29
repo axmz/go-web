@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1>People</h1>
+    <ul>
+        {{range .People}}
+        <li>{{len .Fname}} - {{.Lname}}</li>
+        {{end}}
+    </ul>
+    <h1>Cars</h1>
+    <ul>
+        {{range .Cars}}
+        <li>{{.}}</li>
+        {{end}}
+    </ul>
+</body>
+</html>
